@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FALCON90 - موقع النتائج الرياضية الأول في اليمن والعالم العربي</title>
+    <meta name="description" content="تابع أحدث النتائج الرياضية، مباريات اليوم، الدوريات الكبرى، المنتخب اليمني، والأخبار الرياضية على FALCON90">
+    <meta name="keywords" content="نتائج مباريات, الدوري الإنجليزي, المنتخب اليمني, كرة القدم, رياضة, FALCON90">
+    <meta name="author" content="FALCON90 Team">
+    <link rel="canonical" href="https://falcon90.com">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="FALCON90 - موقع النتائج الرياضية">
+    <meta property="og:description" content="تابع أحدث النتائج الرياضية والمباريات">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://falcon90.com">
+    <meta property="og:image" content="https://falcon90.com/images/og-image.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FALCON90 - موقع النتائج الرياضية">
+    <meta name="twitter:description" content="تابع أحدث النتائج الرياضية والمباريات">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏆</text></svg>">
+    
+    <!-- Styles & Fonts -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #ff7f00;
+            --primary-dark: #e67200;
+            --secondary-color: #0053b3;
+            --accent-color: #00a896;
+            --dark-color: #1a1a2e;
+            --light-color: #f8f9fa;
+            --gray-color: #6c757d;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+            --background-gradient: linear-gradient(135deg, #ff7f00 0%, #ff9500 50%, #ffb347 100%);
+            --header-gradient: linear-gradient(135deg, #059669 0%, #10b981 30%, #34d399 70%, #6ee7b7 100%);
+            --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        .dark-mode {
+            --dark-color: #f8f9fa;
+            --light-color: #1a1a2e;
+            --gray-color: #adb5bd;
+            --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: var(--background-gradient);
+            color: var(--dark-color);
+            line-height: 1.6;
+            min-height: 100vh;
+            transition: var(--transition);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        header {
+            background: var(--header-gradient);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .theme-toggle {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            width: 50px;
+            height: 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 0 3px;
+        }
+
+        .theme-toggle-handle {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: white;
+            transition: var(--transition);
+        }
+
+        .theme-toggle.dark .theme-toggle-handle {
+            transform: translateX(25px);
+        }
+
+        .language-selector {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .language-selector option {
+            background: var(--dark-color);
+            color: var(--light-color);
+        }
+
+        .header-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .search-container {
+            position: relative;
+            width: 300px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 10px 15px 10px 40px;
+            border: none;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            transition: var(--transition);
+        }
+
+        .search-input:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .search-input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+        }
+
+        .news-ticker {
+            background: var(--secondary-color);
+            color: white;
+            padding: 10px 0;
+            overflow: hidden;
+        }
+
+        .ticker-content {
+            display: flex;
+            animation: ticker-scroll 30s linear infinite;
+            white-space: nowrap;
+        }
+
+        .ticker-item {
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        @keyframes ticker-scroll {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 30px 0;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+            color: var(--dark-color);
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .main-content-area {
+            grid-column: span 3;
+        }
+
+        .sidebar {
+            grid-column: span 1;
+        }
+
+        .card {
+            background: var(--light-color);
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+            transition: var(--transition);
+            margin-bottom: 20px;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header {
+            padding: 15px 20px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .match-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .match-card:last-child {
+            border-bottom: none;
+        }
+
+        .team {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 30%;
+        }
+
+        .team-logo {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            margin-bottom: 5px;
+        }
+
+        .team-name {
+            font-weight: 600;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .match-score {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .match-time {
+            font-size: 0.8rem;
+            color: var(--gray-color);
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        .match-status {
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .status-live {
+            background: var(--danger-color);
+            color: white;
+        }
+
+        .status-upcoming {
+            background: var(--warning-color);
+            color: var(--dark-color);
+        }
+
+        .status-finished {
+            background: var(--success-color);
+            color: white;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .news-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .news-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .news-content {
+            padding: 15px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .news-excerpt {
+            color: var(--gray-color);
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .news-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: var(--gray-color);
+        }
+
+        .league-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .league-table th, .league-table td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .league-table th {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .league-table tr:nth-child(even) {
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        .player-card {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .player-card:last-child {
+            border-bottom: none;
+        }
+
+        .player-image {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-left: 10px;
+        }
+
+        .player-info {
+            flex-grow: 1;
+        }
+
+        .player-name {
+            font-weight: 600;
+        }
+
+        .player-team {
+            font-size: 0.8rem;
+            color: var(--gray-color);
+        }
+
+        .player-stat {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .ad-container {
+            background: var(--light-color);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .ad-label {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--gray-color);
+            margin-bottom: 5px;
+        }
+
+        /* AI Assistant */
+        .ai-assistant {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+
+        .ai-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .ai-button:hover {
+            transform: scale(1.1);
+        }
+
+        .ai-chat-container {
+            position: absolute;
+            bottom: 70px;
+            left: 0;
+            width: 350px;
+            background: var(--light-color);
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            display: none;
+        }
+
+        .ai-chat-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .ai-chat-title {
+            font-weight: 700;
+        }
+
+        .ai-close-button {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .ai-chat-messages {
+            height: 300px;
+            padding: 15px;
+            overflow-y: auto;
+        }
+
+        .ai-message {
+            margin-bottom: 15px;
+            display: flex;
+        }
+
+        .ai-message-bot {
+            justify-content: flex-start;
+        }
+
+        .ai-message-user {
+            justify-content: flex-end;
+        }
+
+        .ai-message-content {
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 15px;
+        }
+
+        .ai-message-bot .ai-message-content {
+            background: #e9e9e9;
+            border-top-left-radius: 5px;
+        }
+
+        .ai-message-user .ai-message-content {
+            background: var(--primary-color);
+            color: white;
+            border-top-right-radius: 5px;
+        }
+
+        .ai-chat-input {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .ai-input {
+            flex-grow: 1;
+            padding: 10px 15px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            margin-right: 10px;
+        }
+
+        .ai-send-button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 40px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--gray-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--gray-color);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .grid-container {
+                grid-template-columns: repeat(1, 1fr);
+            }
+            
+            .main-content-area, .sidebar {
+                grid-column: span 1;
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-button {
+                display: block;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .news-grid {
+                grid-template-columns: repeat(1, 1fr);
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(1, 1fr);
+            }
+            
+            .header-main {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .search-container {
+                width: 100%;
+            }
+            
+            .ai-chat-container {
+                width: 300px;
+            }
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-button {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            height: 100vh;
+            background: var(--light-color);
+            z-index: 1001;
+            padding: 20px;
+            transition: var(--transition);
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-nav.open {
+            right: 0;
+        }
+
+        .mobile-nav-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-nav-links {
+            list-style: none;
+        }
+
+        .mobile-nav-links li {
+            margin-bottom: 15px;
+        }
+
+        .mobile-nav-links a {
+            color: var(--dark-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: block;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            display: none;
+        }
+
+        /* Utility Classes */
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-20 {
+            margin-bottom: 20px;
+        }
+
+        .mt-20 {
+            margin-top: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        /* Dark mode support */
+        body.dark-mode {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        }
+
+        body.dark-mode .card {
+            background: #1e2a3e;
+            color: #f8f9fa;
+        }
+
+        body.dark-mode .card-header {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        body.dark-mode .news-excerpt {
+            color: #adb5bd;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <div class="logo-icon">🏆</div>
+                    <div class="logo-text">FALCON90</div>
+                </div>
+                <div class="header-actions">
+                    <button class="theme-toggle" id="themeToggle">
+                        <span class="theme-toggle-handle"></span>
+                    </button>
+                    <select class="language-selector" id="languageSelector">
+                        <option value="ar">العربية</option>
+                        <option value="en">English</option>
+                        <option value="fr">Français</option>
+                        <option value="es">Español</option>
+                    </select>
+                </div>
+            </div>
+            <div class="header-main">
+                <nav class="nav-links">
+                    <a href="#" class="nav-link active">الرئيسية</a>
+                    <a href="#" class="nav-link">مباريات اليوم</a>
+                    <a href="#" class="nav-link">الدوريات</a>
+                    <a href="#" class="nav-link">المنتخب اليمني</a>
+                    <a href="#" class="nav-link">الأخبار</a>
+                    <a href="#" class="nav-link">التوقعات</a>
+                </nav>
+                <div class="search-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" class="search-input" placeholder="ابحث عن فريق أو لاعب...">
+                </div>
+                <button class="mobile-menu-button" id="mobileMenuButton">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <div class="news-ticker">
+            <div class="ticker-content">
+                <div class="ticker-item">
+                    <span class="live-dot"></span>
+                    <span>المنتخب اليمني يتأهل إلى الجولة التالية من التصفيات الآسيوية</span>
+                </div>
+                <div class="ticker-item">
+                    <span class="live-dot"></span>
+                    <span>ليفربول يتغلب على مانشستر سيتي بثلاثية نظيفة</span>
+                </div>
+                <div class="ticker-item">
+                    <span class="live-dot"></span>
+                    <span>انطلاق دوري أبطال أوروبا الأسبوع المقبل</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-header">
+            <div class="logo">
+                <div class="logo-icon">🏆</div>
+                <div class="logo-text">FALCON90</div>
+            </div>
+            <button class="ai-close-button" id="closeMobileNav">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="#">الرئيسية</a></li>
+            <li><a href="#">مباريات اليوم</a></li>
+            <li><a href="#">الدوريات</a></li>
+            <li><a href="#">المنتخب اليمني</a></li>
+            <li><a href="#">الأخبار</a></li>
+            <li><a href="#">التوقعات</a></li>
+            <li><a href="#">إعدادات</a></li>
+            <li><a href="#">تسجيل الدخول</a></li>
+        </ul>
+    </div>
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="grid-container">
+                <div class="main-content-area">
+                    <h2 class="section-title">المباريات المباشرة</h2>
+                    <div class="card mb-20">
+                        <div class="card-header">
+                            <h3 class="card-title">مباريات مباشرة الآن</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="match-card">
+                                <div class="team">
+                                    <img src="https://api.football-data.org/assets/team-crest-1.png" alt="Team 1" class="team-logo">
+                                    <div class="team-name">النادي الأهلي</div>
+                                </div>
+                                <div class="match-info">
+                                    <div class="match-score">2 - 1</div>
+                                    <div class="match-time">الدقيقة 67</div>
+                                </div>
+                                <div class="team">
+                                    <img src="https://api.football-data.org/assets/team-crest-2.png" alt="Team 2" class="team-logo">
+                                    <div class="team-name">النادي الاتحاد</div>
+                                </div>
+                                <span class="match-status status-live">مباشر</span>
+                            </div>
+                            <div class="match-card">
+                                <div class="team">
+                                    <img src="https://api.football-data.org/assets/team-crest-3.png" alt="Team 3" class="team-logo">
+                                    <div class="team-name">النادي العربي</div>
+                                </div>
+                                <div class="match-info">
+                                    <div class="match-score">0 - 0</div>
+                                    <div class="match-time">لم تبدأ بعد</div>
+                                </div>
+                                <div class="team">
+                                    <img src="https://api.football-data.org/assets/team-crest-4.png" alt="Team 4" class="team-logo">
+                                    <div class="team-name">النادي الوطني</div>
+                                </div>
+                                <span class="match-status status-upcoming">قريباً</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 class="section-title">آخر الأخبار</h2>
+                    <div class="news-grid">
+                        <div class="card news-card">
+                            <img src="https://via.placeholder.com/400x200?text=خبر+رياضي" alt="News Image" class="news-image">
+                            <div class="news-content">
+                                <h3 class="news-title">المنتخب اليمني يفوز على نظيره السعودي في تصفيات كأس العالم</h3>
+                                <p class="news-excerpt">حقق المنتخب اليمني فوزاً تاريخياً على نظيره السعودي بهدفين دون رد في إطار تصفيات كأس العالم المقبلة.</p>
+                                <div class="news-meta">
+                                    <span>منذ 3 ساعات</span>
+                                    <span>المصدر: وكالة الرياضة</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card news-card">
+                            <img src="https://via.placeholder.com/400x200?text=خبر+رياضي" alt="News Image" class="news-image">
+                            <div class="news-content">
+                                <h3 class="news-title">ميسي يحقق لقب الكرة الذهبية للمرة الثامنة في مسيرته</h3>
+                                <p class="news-excerpt">فاز النجم الأرجنتيني ليونيل ميسي بجائزة الكرة الذهبية للمرة الثامنة في مسيرته الكروية الحافلة بالإنجازات.</p>
+                                <div class="news-meta">
+                                    <span>منذ 6 ساعات</span>
+                                    <span>المصدر: FIFA</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 class="section-title mt-20">دوري المحترفين السعودي</h2>
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">جدول الترتيب</h3>
+                        </div>
+                        <div class="card-body">
+                            <table class="league-table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>الفريق</th>
+                                        <th>ل</th>
+                                        <th>ف</th>
+                                        <th>ت</th>
+                                        <th>خ</th>
+                                        <th>ن</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>النادي الأهلي</td>
+                                        <td>10</td>
+                                        <td>8</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>25</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>النادي الهلال</td>
+                                        <td>10</td>
+                                        <td>7</td>
+                                        <td>2</td>
+                                        <td>1</td>
+                                        <td>23</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>النادي الاتحاد</td>
+                                        <td>10</td>
+                                        <td>6</td>
+                                        <td>2</td>
+                                        <td>2</td>
+                                        <td>20</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar">
+                    <div class="ad-container">
+                        <span class="ad-label">إعلان</span>
+                        <img src="https://via.placeholder.com/300x250?text=مساحة+إعلانية" alt="Advertisement">
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">هدافو الدوري</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="player-card">
+                                <img src="https://via.placeholder.com/50x50?text=صورة" alt="Player" class="player-image">
+                                <div class="player-info">
+                                    <div class="player-name">كريستiano رونالدو</div>
+                                    <div class="player-team">النصر</div>
+                                </div>
+                                <div class="player-stat">12</div>
+                            </div>
+                            <div class="player-card">
+                                <img src="https://via.placeholder.com/50x50?text=صورة" alt="Player" class="player-image">
+                                <div class="player-info">
+                                    <div class="player-name">ساديو ماني</div>
+                                    <div class="player-team">الأهلي</div>
+                                </div>
+                                <div class="player-stat">10</div>
+                            </div>
+                            <div class="player-card">
+                                <img src="https://via.placeholder.com/50x50?text=صورة" alt="Player" class="player-image">
+                                <div class="player-info">
+                                    <div class="player-name">نيمار</div>
+                                    <div class="player-team">الهلال</div>
+                                </div>
+                                <div class="player-stat">8</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">مباريات المنتخب اليمني</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="match-card">
+                                <div class="team">
+                                    <div class="team-name">اليمن</div>
+                                </div>
+                                <div class="match-info">
+                                    <div class="match-score">VS</div>
+                                    <div class="match-time">15 نوفمبر</div>
+                                </div>
+                                <div class="team">
+                                    <div class="team-name">السعودية</div>
+                                </div>
+                            </div>
+                            <div class="match-card">
+                                <div class="team">
+                                    <div class="team-name">اليمن</div>
+                                </div>
+                                <div class="match-info">
+                                    <div class="match-score">VS</div>
+                                    <div class="match-time">20 نوفمبر</div>
+                                </div>
+                                <div class="team">
+                                    <div class="team-name">اليابان</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ad-container">
+                        <span class="ad-label">إعلان</span>
+                        <img src="https://via.placeholder.com/300x600?text=مساحة+إعلانية" alt="Advertisement">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- AI Assistant -->
+    <div class="ai-assistant">
+        <button class="ai-button" id="aiButton">
+            <i class="fas fa-robot"></i>
+        </button>
+        <div class="ai-chat-container" id="aiChat">
+            <div class="ai-chat-header">
+                <h3 class="ai-chat-title">مساعد FALCON90</h3>
+                <button class="ai-close-button" id="aiCloseButton">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="ai-chat-messages" id="aiMessages">
+                <div class="ai-message ai-message-bot">
+                    <div class="ai-message-content">
+                        مرحباً! أنا مساعد FALCON90. كيف يمكنني مساعدتك اليوم؟
+                    </div>
+                </div>
+            </div>
+            <div class="ai-chat-input">
+                <input type="text" class="ai-input" placeholder="اكتب رسالتك هنا...">
+                <button class="ai-send-button" id="aiSendButton">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>عن FALCON90</h3>
+                    <p>الموقع الرياضي الأول في اليمن والعالم العربي لمتابعة أحدث النتائج الرياضية والأخبار والتحليلات.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">الرئيسية</a></li>
+                        <li><a href="#">مباريات اليوم</a></li>
+                        <li><a href="#">الدوريات</a></li>
+                        <li><a href="#">المنتخب اليمني</a></li>
+                        <li><a href="#">الأخبار</a></li>
+                        <li><a href="#">التوقعات</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>الدوريات</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">الدوري الإنجليزي</a></li>
+                        <li><a href="#">الدوري الإسباني</a></li>
+                        <li><a href="#">الدوري الإيطالي</a></li>
+                        <li><a href="#">الدوري الألماني</a></li>
+                        <li><a href="#">دوري أبطال أوروبا</a></li>
+                        <li><a href="#">دوري المحترفين السعودي</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>الدعم</h3>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html">سياسة الخصوصية</a></li>
+                        <li><a href="terms.html">شروط الاستخدام</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                        <li><a href="advertise.html">الإعلانات</a></li>
+                        <li><a href="about.html">عن الموقع</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2023 FALCON90. جميع الحقوق محفوظة. تم التطوير بواسطة فريق FALCON90</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Theme Toggle
+            const themeToggle = document.getElementById('themeToggle');
+            const body = document.body;
+            
+            themeToggle.addEventListener('click', function() {
+                body.classList.toggle('dark-mode');
+                themeToggle.classList.toggle('dark');
+                localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
+            });
+            
+            // Load saved theme
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                body.classList.add('dark-mode');
+                themeToggle.classList.add('dark');
+            }
+            
+            // Mobile Menu
+            const mobileMenuButton = document.getElementById('mobileMenuButton');
+            const mobileNav = document.getElementById('mobileNav');
+            const overlay = document.getElementById('overlay');
+            const closeMobileNav = document.getElementById('closeMobileNav');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileNav.classList.add('open');
+                overlay.style.display = 'block';
+            });
+            
+            closeMobileNav.addEventListener('click', function() {
+                mobileNav.classList.remove('open');
+                overlay.style.display = 'none';
+            });
+            
+            overlay.addEventListener('click', function() {
+                mobileNav.classList.remove('open');
+                overlay.style.display = 'none';
+            });
+            
+            // AI Assistant
+            const aiButton = document.getElementById('aiButton');
+            const aiChat = document.getElementById('aiChat');
+            const aiCloseButton = document.getElementById('aiCloseButton');
+            const aiSendButton = document.getElementById('aiSendButton');
+            const aiInput = document.querySelector('.ai-input');
+            const aiMessages = document.getElementById('aiMessages');
+            
+            aiButton.addEventListener('click', function() {
+                aiChat.style.display = aiChat.style.display === 'block' ? 'none' : 'block';
+            });
+            
+            aiCloseButton.addEventListener('click', function() {
+                aiChat.style.display = 'none';
+            });
+            
+            aiSendButton.addEventListener('click', sendMessage);
+            aiInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+            
+            function sendMessage() {
+                const message = aiInput.value.trim();
+                if (message) {
+                    // Add user message
+                    addMessage(message, 'user');
+                    aiInput.value = '';
+                    
+                    // Simulate AI response
+                    setTimeout(() => {
+                        const response = generateAIResponse(message);
+                        addMessage(response, 'bot');
+                    }, 1000);
+                }
+            }
+            
+            function addMessage(text, sender) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `ai-message ai-message-${sender}`;
+                
+                const contentDiv = document.createElement('div');
+                contentDiv.className = 'ai-message-content';
+                contentDiv.textContent = text;
+                
+                messageDiv.appendChild(contentDiv);
+                aiMessages.appendChild(messageDiv);
+                
+                // Scroll to bottom
+                aiMessages.scrollTop = aiMessages.scrollHeight;
+            }
+            
+            function generateAIResponse(message) {
+                const lowerMessage = message.toLowerCase();
+                
+                if (lowerMessage.includes('مباراة') || lowerMessage.includes('نتيجة')) {
+                    return 'فاز النادي الأهلي على النادي الاتحاد بنتيجة 2-1 في المباراة التي جمعتهما مساء اليوم.';
+                } else if (lowerMessage.includes('هداف') || lowerMessage.includes('هدافين')) {
+                    return 'حاليا، كريستيانو رونالدو هو هداف الدوري برصيد 12 هدفاً، يليه ساديو ماني برصيد 10 أهداف.';
+                } else if (lowerMessage.includes('اليمن') || lowerMessage.includes('منتخب')) {
+                    return 'المنتخب اليمني سيخوض مباراة مهمة ضد المنتخب السعودي يوم 15 نوفمبر في إطار تصفيات كأس العالم.';
+                } else if (lowerMessage.includes('دوري') || lowerMessage.includes('بطولة')) {
+                    return 'الدوري الإنجليزي هو الأكثر متابعة في العالم، يليه الدوري الإسباني ثم الدوري الإيطالي.';
+                } else {
+                    return 'شكراً لاستفسارك! كيف يمكنني مساعدتك في مجال الرياضة والأخبار الرياضية؟';
+                }
+            }
+            
+            // Language Selector
+            const languageSelector = document.getElementById('languageSelector');
+            
+            languageSelector.addEventListener('change', function() {
+                const selectedLang = this.value;
+                // In a real application, you would change the language here
+                alert(`تم تغيير اللغة إلى ${this.options[this.selectedIndex].text}`);
+                localStorage.setItem('language', selectedLang);
+            });
+            
+            // Load saved language
+            const savedLanguage = localStorage.getItem('language');
+            if (savedLanguage) {
+                languageSelector.value = savedLanguage;
+            }
+            
+            // Simulate live score updates
+            setInterval(() => {
+                const liveMatches = document.querySelectorAll('.match-status.status-live');
+                liveMatches.forEach(match => {
+                    const scoreElement = match.closest('.match-card').querySelector('.match-score');
+                    if (scoreElement && Math.random() > 0.7) {
+                        const score = scoreElement.textContent.split(' - ');
+                        const teamToUpdate = Math.floor(Math.random() * 2);
+                        score[teamToUpdate] = parseInt(score[teamToUpdate]) + 1;
+                        scoreElement.textContent = score.join(' - ');
+                        
+                        // Add animation
+                        scoreElement.classList.add('fade-in');
+                        setTimeout(() => {
+                            scoreElement.classList.remove('fade-in');
+                        }, 1000);
+                    }
+                });
+            }, 10000);
+        });
+    </script>
+</body>
+</html>
